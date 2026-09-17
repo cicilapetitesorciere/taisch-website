@@ -108,24 +108,60 @@ h2 { font-size: clamp(2.4rem, 4.8vw, 4.8rem); font-weight: 500; letter-spacing: 
 .construction-art { background: url("taisch-aodhan.jpg") center/cover no-repeat; min-height: 100vh; }
 .construction-content { align-items: center; background: var(--paper); display: flex; flex-direction: column; justify-content: center; padding: 40px; text-align: center; }
 .construction-brand { color: var(--orange); font: 500 clamp(1rem, 2vw, 1.4rem) var(--mono); letter-spacing: .1em; margin-bottom: 34px; text-transform: uppercase; }
-.construction-page h1 { font-size: clamp(1.7rem, 3vw, 3.4rem); font-weight: 500; letter-spacing: -.06em; line-height: 1.05; margin: 0; max-width: 700px; }
-.construction-page h1 a { color: var(--ink); }
+.construction-page h1 { font-size: clamp(3rem, 6vw, 6.5rem); font-weight: 500; letter-spacing: -.07em; line-height: .9; margin: 0; max-width: 600px; }
 
 @media (max-width: 720px) {
   .construction-page { display: flex; flex-direction: column; }
   .construction-art { min-height: 54vh; }
   .construction-content { flex: 1; min-height: 46vh; padding: 50px 20px; }
-  .construction-page h1 { font-size: clamp(1.3rem, 7vw, 2.6rem); }
+  .construction-page h1 { font-size: clamp(3rem, 13vw, 5rem); }
 }
 
 .team-page { align-items: center; display: flex; flex-direction: column; justify-content: center; min-height: 100vh; padding: 40px 20px; }
 .team-page h1 { font-size: clamp(2.5rem, 7vw, 7rem); font-weight: 500; letter-spacing: -.07em; line-height: .95; margin: 0; text-align: center; }
-.topbar { align-items: center; display: flex; justify-content: space-between; left: 0; padding: 27px 32px; position: absolute; right: 0; top: 0; z-index: 1; }
+
+.contact-page { align-items: center; display: flex; justify-content: center; min-height: calc(100vh - 70px); padding: 60px 20px 90px; text-align: center; }
+.contact-page-inner { max-width: 720px; }
+.contact-page .eyebrow { color: var(--muted); font: 500 .72rem var(--mono); letter-spacing: .08em; margin: 0 0 18px; text-transform: uppercase; }
+.contact-page h1 { font-size: clamp(2.8rem, 6vw, 5.2rem); font-weight: 500; letter-spacing: -.06em; line-height: .95; margin: 0 0 22px; }
+.contact-lede { color: var(--muted); font-size: 1.05rem; line-height: 1.6; margin: 0 auto 60px; max-width: 480px; }
+.contact-lede a { color: var(--orange); text-decoration: underline; text-underline-offset: 2px; }
+.contact-lede a:hover { color: var(--ink); }
+.contact-grid { border-top: 1px solid var(--line); display: grid; gap: 40px; grid-template-columns: repeat(3, 1fr); padding-top: 50px; text-align: left; }
+.contact-block h2 { color: var(--orange); font: 500 .7rem var(--mono); letter-spacing: .1em; margin: 0 0 14px; text-transform: uppercase; }
+.contact-block p, .contact-block a { font-size: 1.02rem; line-height: 1.5; margin: 0; }
+.contact-block a { display: inline-block; }
+.contact-socials { display: flex; gap: 20px; margin-top: 16px; }
+
+@media (max-width: 720px) {
+  .contact-grid { grid-template-columns: 1fr; text-align: center; }
+  .contact-socials { justify-content: center; }
+}
+
+.team-section { border-top: 1px solid var(--line); margin-top: 50px; padding-top: 50px; }
+.team-section .eyebrow { color: var(--muted); font: 500 .72rem var(--mono); letter-spacing: .08em; margin: 0 0 34px; text-transform: uppercase; }
+.team-grid { display: grid; gap: 40px; grid-template-columns: repeat(2, minmax(0, 160px)); justify-content: center; }
+.profile-card { align-items: center; display: flex; flex-direction: column; gap: 16px; }
+.profile-avatar { align-items: center; background: var(--orange); border-radius: 50%; color: var(--white); display: flex; font: 600 1.3rem var(--display); height: 84px; justify-content: center; letter-spacing: -.02em; width: 84px; }
+.profile-name { font-size: 1.02rem; font-weight: 500; margin: 0; }
+
+@media (max-width: 720px) {
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 130px)); gap: 24px; }
+  .profile-avatar { height: 72px; width: 72px; font-size: 1.1rem; }
+}
+
+body:has(.topbar) { padding-top: 70px; }
+.topbar { align-items: center; background: var(--paper); border-bottom: 1px solid var(--line); box-sizing: border-box; display: flex; height: 70px; justify-content: space-between; left: 0; padding: 0 32px; position: fixed; right: 0; top: 0; z-index: 10; }
+.topbar-links { align-items: center; display: flex; gap: 26px; }
 .topbar-brand, .topbar-link { font: 500 .72rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .topbar-brand { color: var(--orange); }
 .topbar-link { color: var(--ink); }
 .topbar-brand:hover, .topbar-link:hover { color: var(--orange); }
+.topbar-icon { display: inline-flex; }
+.topbar-icon svg { display: block; }
 
 @media (max-width: 720px) {
-  .topbar { padding: 22px 20px; }
+  body:has(.topbar) { padding-top: 60px; }
+  .topbar { height: 60px; padding: 0 20px; }
+  .topbar-links { gap: 14px; }
 }
